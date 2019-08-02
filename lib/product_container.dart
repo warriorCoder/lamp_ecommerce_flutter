@@ -14,7 +14,7 @@ class ProductContainer extends StatelessWidget {
         Navigator.pushNamed(context, '/details');
       },
       child: Container(
-        // margin: EdgeInsets.all(15.0),
+        // margin: EdgeInsets.symmetric(horizontal: 15.0),
         width: MediaQuery.of(context).size.width,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -24,7 +24,6 @@ class ProductContainer extends StatelessWidget {
                 child: Stack(
                   children: <Widget>[
                     Container(
-                      // padding: EdgeInsets.all(10.0),
                       margin: EdgeInsets.only(bottom: 15.0),
                       child: Image.network(
                         products[id]["pictureLink"],
@@ -61,7 +60,7 @@ class ProductContainer extends StatelessWidget {
             ),
             Text(
               products[id]["productName"],
-              style: TextStyle(fontSize: 19, color: Colors.grey),
+              style: TextStyle(fontSize: 17, color: Colors.white54),
             ),
             SizedBox(
               height: 5.0,

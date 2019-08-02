@@ -20,10 +20,12 @@ class _HomeState extends State<Home> {
       child: Scaffold(
         body: Container(
           decoration: BoxDecoration(
-              gradient: LinearGradient(
-                  begin: Alignment.centerLeft,
-                  end: Alignment.centerRight,
-                  colors: [darkBg, lighterBg])),
+            gradient: LinearGradient(
+              begin: Alignment.centerLeft,
+              end: Alignment.centerRight,
+              colors: [darkBg, lighterBg],
+            ),
+          ),
           padding: EdgeInsets.only(left: 21, right: 21, top: 15),
           child: Column(
             children: <Widget>[
@@ -32,7 +34,9 @@ class _HomeState extends State<Home> {
                 height: 15.0,
               ),
               Menu(),
-              SizedBox(height: 20,),
+              SizedBox(
+                height: 20,
+              ),
               Flexible(
                 flex: 7,
                 child: PageView.builder(
@@ -77,8 +81,11 @@ class _HomeState extends State<Home> {
             borderRadius: BorderRadius.circular(15),
             color: Colors.white,
           ),
-          child: Text("Fans",
-            style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black45),),
+          child: Text(
+            "Fans",
+            style:
+                TextStyle(fontWeight: FontWeight.bold, color: Colors.black45),
+          ),
         ),
         Container(
           width: 80,
@@ -105,8 +112,11 @@ class _HomeState extends State<Home> {
             borderRadius: BorderRadius.circular(15),
             color: Colors.white,
           ),
-          child: Text("Heater",
-            style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black45),),
+          child: Text(
+            "Heater",
+            style:
+                TextStyle(fontWeight: FontWeight.bold, color: Colors.black45),
+          ),
         ),
       ],
     );
