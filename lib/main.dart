@@ -5,6 +5,9 @@ import 'details/details.dart';
 import 'global.dart';
 import 'home.dart';
 
+//This app was inspired from
+//https://dribbble.com/shots/6785635-Lampster-app/attachments
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {

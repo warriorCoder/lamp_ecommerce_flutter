@@ -27,9 +27,9 @@ class _MenuState extends State<Menu> {
                 Text(
                   categories[i],
                   style: TextStyle(
-                      color: Colors.white,
+                      color:active == i ? Colors.white : Colors.white54,
                       fontWeight:
-                          active == i ? FontWeight.bold : FontWeight.w100,
+                           FontWeight.bold ,
                       fontSize: 17.0),
                 ),
                 SizedBox(

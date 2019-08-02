@@ -204,7 +204,7 @@ class DetailsBottom extends StatelessWidget {
                       decoration: BoxDecoration(
                         color: accent,
                         borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(45),
+                          topLeft: Radius.circular(35),
                         ),
                       ),
                       child: Icon(

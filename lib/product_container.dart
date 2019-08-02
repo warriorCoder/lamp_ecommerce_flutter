@@ -14,7 +14,7 @@ class ProductContainer extends StatelessWidget {
         Navigator.pushNamed(context, '/details');
       },
       child: Container(
-        margin: EdgeInsets.all(15.0),
+        // margin: EdgeInsets.all(15.0),
         width: MediaQuery.of(context).size.width,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -24,11 +24,12 @@ class ProductContainer extends StatelessWidget {
                 child: Stack(
                   children: <Widget>[
                     Container(
-                      padding: EdgeInsets.all(5.0),
-                      margin: EdgeInsets.all(15.0),
+                      // padding: EdgeInsets.all(10.0),
+                      margin: EdgeInsets.only(bottom: 15.0),
                       child: Image.network(
                         products[id]["pictureLink"],
-                        fit: BoxFit.cover,
+                        fit: BoxFit.fitHeight,
+                        alignment: Alignment.topCenter,
                       ),
                       decoration: BoxDecoration(
                         color: productColors[id],
@@ -37,18 +38,13 @@ class ProductContainer extends StatelessWidget {
                     ),
                     Positioned(
                       bottom: 0,
-                      right: 0,
+                      right: 10,
                       child: Container(
-                        padding: EdgeInsets.all(15.0),
+                        padding: EdgeInsets.all(12.0),
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
                           color: accent,
-                          boxShadow: [
-                            BoxShadow(
-                                color: accent,
-                                offset: Offset(0, 3),
-                                blurRadius: 5.0)
-                          ],
+                          
                         ),
                         child: Icon(
                           Icons.favorite,
@@ -70,8 +66,9 @@ class ProductContainer extends StatelessWidget {
             SizedBox(
               height: 5.0,
             ),
-            Text(
+            Text(              
               products[id]["price"],
+              textAlign: TextAlign.start,
               style: TextStyle(
                   fontSize: 19,
                   color: Colors.white,

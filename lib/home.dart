@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'bottom_nav.dart';
 import 'global.dart';
@@ -18,17 +19,20 @@ class _HomeState extends State<Home> {
     return SafeArea(
       child: Scaffold(
         body: Container(
-          decoration: BoxDecoration(gradient: LinearGradient(begin: Alignment.topRight, end: Alignment.bottomLeft, colors: [darkBg, lighterBg])),
+          decoration: BoxDecoration(
+              gradient: LinearGradient(
+                  begin: Alignment.centerLeft,
+                  end: Alignment.centerRight,
+                  colors: [darkBg, lighterBg])),
           padding: EdgeInsets.only(left: 21, right: 21, top: 15),
           child: Column(
-            
             children: <Widget>[
               Header(),
               SizedBox(
                 height: 15.0,
               ),
               Menu(),
-              Spacer(),_buildProductRow(),
+              SizedBox(height: 20,),
               Flexible(
                 flex: 7,
                 child: PageView.builder(
@@ -40,6 +44,7 @@ class _HomeState extends State<Home> {
                 ),
               ),
               Spacer(),
+              _buildSubCategoryRow(),
               SizedBox(
                 height: 25,
               ),
@@ -54,58 +59,56 @@ class _HomeState extends State<Home> {
     );
   }
 
-  _buildProductRow() {
-    return Flexible(
-      flex: 1,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: <Widget>[
-          IconButton(
-            icon: Icon(Icons.tune),
+  _buildSubCategoryRow() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: <Widget>[
+        IconButton(
+          icon: Icon(Icons.tune),
+          color: Colors.white,
+          onPressed: () {},
+        ),
+        Container(
+          width: 80,
+          height: 80,
+          alignment: Alignment.center,
+          // margin: EdgeInsets.symmetric(horizontal: 9.0),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(15),
             color: Colors.white,
-            onPressed: () {},
           ),
-          Expanded(
-            child: Container(
-              alignment: Alignment.center,
-              margin: EdgeInsets.symmetric(horizontal: 9.0),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(15),
-                color: Colors.white,
-              ),
-              child: Text("Fan"),
+          child: Text("Fans",
+            style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black45),),
+        ),
+        Container(
+          width: 80,
+          height: 80,
+          alignment: Alignment.center,
+          margin: EdgeInsets.symmetric(horizontal: 9.0),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(15),
+            gradient: LinearGradient(
+              colors: [Colors.yellow, accent],
             ),
           ),
-          Expanded(
-            child: Container(
-              alignment: Alignment.center,
-              margin: EdgeInsets.symmetric(horizontal: 9.0),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(15),
-                gradient: LinearGradient(
-                  colors: [Colors.yellow, accent],
-                ),
-              ),
-              child: Text(
-                "Lamps",
-                style:
-                    TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
-              ),
-            ),
+          child: Text(
+            "Lamps",
+            style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
           ),
-          Expanded(
-            child: Container(
-              alignment: Alignment.center,
-              margin: EdgeInsets.symmetric(horizontal: 9.0),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(15),
-                color: Colors.white,
-              ),
-              child: Text("Heater"),
-            ),
+        ),
+        Container(
+          width: 80,
+          height: 80,
+          alignment: Alignment.center,
+          margin: EdgeInsets.symmetric(horizontal: 9.0),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(15),
+            color: Colors.white,
           ),
-        ],
-      ),
+          child: Text("Heater",
+            style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black45),),
+        ),
+      ],
     );
   }
 }
